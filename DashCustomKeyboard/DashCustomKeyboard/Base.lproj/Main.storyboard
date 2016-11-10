@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MoB-XF-IGg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="25G-Hv-hAq">
+            <objects>
+                <navigationController id="MoB-XF-IGg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Muc-0s-jzb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YtJ-Us-YHU" kind="relationship" relationship="rootViewController" id="zSA-QA-7mC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WwG-kL-rl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410" y="338"/>
+        </scene>
+        <!--自定义键盘演示-->
+        <scene sceneID="8yh-y4-wQn">
+            <objects>
+                <viewController id="YtJ-Us-YHU" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bk-t7-fM1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kdy-Ca-ikN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dS4-tc-QZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="字符键盘输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajL-AS-vVH">
+                                <rect key="frame" x="16" y="96" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="符号键盘输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3t-Zz-aIC">
+                                <rect key="frame" x="16" y="158" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="数字键盘输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMu-Mz-zen">
+                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gMu-Mz-zen" firstAttribute="leading" secondItem="dS4-tc-QZg" secondAttribute="leading" constant="16" id="EEa-no-dXy"/>
+                            <constraint firstItem="ajL-AS-vVH" firstAttribute="top" secondItem="8bk-t7-fM1" secondAttribute="bottom" constant="32" id="KAx-ey-5di"/>
+                            <constraint firstAttribute="trailing" secondItem="b3t-Zz-aIC" secondAttribute="trailing" constant="16" id="SQS-Pm-i0z"/>
+                            <constraint firstAttribute="trailing" secondItem="ajL-AS-vVH" secondAttribute="trailing" constant="16" id="TAs-A9-Tah"/>
+                            <constraint firstItem="ajL-AS-vVH" firstAttribute="leading" secondItem="dS4-tc-QZg" secondAttribute="leading" constant="16" id="TMl-De-jKA"/>
+                            <constraint firstAttribute="trailing" secondItem="gMu-Mz-zen" secondAttribute="trailing" constant="16" id="gCF-bg-jTt"/>
+                            <constraint firstItem="gMu-Mz-zen" firstAttribute="top" secondItem="b3t-Zz-aIC" secondAttribute="bottom" constant="32" id="iU7-TS-QeO"/>
+                            <constraint firstItem="b3t-Zz-aIC" firstAttribute="leading" secondItem="dS4-tc-QZg" secondAttribute="leading" constant="16" id="sTa-c4-Fgm"/>
+                            <constraint firstItem="b3t-Zz-aIC" firstAttribute="top" secondItem="ajL-AS-vVH" secondAttribute="bottom" constant="32" id="tCm-4V-hCz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="自定义键盘演示" id="AtU-lb-YSX"/>
+                    <connections>
+                        <outlet property="letterTextField" destination="ajL-AS-vVH" id="763-o0-Jna"/>
+                        <outlet property="numberTextField" destination="gMu-Mz-zen" id="Soh-oE-Twt"/>
+                        <outlet property="symbolTextField" destination="b3t-Zz-aIC" id="rpO-lO-wKw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Dm-dc-5kd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="337.78110944527737"/>
+        </scene>
+    </scenes>
+</document>
