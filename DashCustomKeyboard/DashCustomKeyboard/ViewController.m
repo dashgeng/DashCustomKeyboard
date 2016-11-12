@@ -12,6 +12,9 @@
 
 @interface ViewController () <KeyboardDelegate, UITextFieldDelegate>
 
+@property (nonatomic, strong)CustomKeyboardView *letterKeyboardView;
+@property (nonatomic, strong)CustomKeyboardView *symbolKeyboardView;
+@property (nonatomic, strong)CustomKeyboardView *numberKeyboardView;
 @end
 
 @implementation ViewController
@@ -57,20 +60,20 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (textField.tag == 201) {
-        CustomKeyboardView *letterKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardLetter string:@""];
-        letterKeyboardView.delegate = self;
-        letterKeyboardView.tag = 101;
-        self.letterTextField.inputView = letterKeyboardView;
+        self.letterKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardLetter string:@""];
+        self.letterKeyboardView.delegate = self;
+        self.letterKeyboardView.tag = 101;
+        self.letterTextField.inputView = self.letterKeyboardView;
     } else if (textField.tag == 202) {
-        CustomKeyboardView *symbolKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardSymbol string:@""];
-        symbolKeyboardView.delegate = self;
-        symbolKeyboardView.tag = 102;
-        self.symbolTextField.inputView = symbolKeyboardView;
+        self.symbolKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardSymbol string:@""];
+        self.symbolKeyboardView.delegate = self;
+        self.symbolKeyboardView.tag = 102;
+        self.symbolTextField.inputView = self.symbolKeyboardView;
     } else if (textField.tag == 203) {
-        CustomKeyboardView *numberKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardNumber string:@""];
-        numberKeyboardView.delegate = self;
-        numberKeyboardView.tag = 103;
-        self.numberTextField.inputView = numberKeyboardView;
+        self.numberKeyboardView = [[CustomKeyboardView alloc] initWithFrame:CGRectMake(0, [[UIScreen mainScreen] bounds].size.height - 186, [[UIScreen mainScreen] bounds].size.width, 246) type:KeyboardNumber string:@""];
+        self.numberKeyboardView.delegate = self;
+        self.numberKeyboardView.tag = 103;
+        self.numberTextField.inputView = self.numberKeyboardView;
     }
 }
 @end
